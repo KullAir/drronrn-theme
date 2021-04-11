@@ -1,0 +1,239 @@
+
+@mixin rowMachine($numPerRow, $margin) {
+    width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
+    &:nth-child(n) {
+      margin-bottom: $margin;
+      margin-right: $margin;
+    }
+    &:nth-child(#{$numPerRow}n) {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+  
+  @mixin rowMachine-rtl($numPerRow, $margin) {
+    width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
+    &:nth-child(n) {
+      margin-bottom: $margin;
+      margin-left: $margin;
+    }
+    &:nth-child(#{$numPerRow}n) {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+  
+  @mixin rowMachine-rtl-important($numPerRow, $margin) {
+    width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
+    &:nth-child(n) {
+      margin-bottom: $margin !important;
+      margin-left: $margin! important;
+    }
+    &:nth-child(#{$numPerRow}n) {
+      margin-right: 0 !important;
+      margin-left: 0 !important;
+    }
+  }
+  
+  
+  
+  /***********************************
+    vertical align
+  *************************************/
+  
+  @mixin vertical-align($position: relative) {
+    position: $position;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+
+  @mixin horizontal-align($position: relative) {
+    position: $position;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+
+  
+  @mixin total-align($position: relative) {
+    position: $position;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+
+
+  @mixin main-menu-wide-screen {
+    .navbar-nav{
+      margin-right: auto;
+      margin-left: 0 !important;
+      /*
+      &>.menu-item{
+        
+        padding-right:1rem;
+        padding-left:1rem;
+
+
+
+
+      }*/
+    }
+  }
+
+  @mixin underline-titles(){
+      position: relative;
+      padding-bottom: .5em;
+
+      &:after{
+          
+
+          position: absolute;
+        
+          content: '';
+          display: block;
+          width: 120px;
+          padding-top: .25em;
+          border-bottom: 3px solid;
+          bottom: 0;
+
+      }
+  } 
+
+  @mixin underline-titles-center(){
+    text-align: center;
+    &:after{
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    
+    }
+}
+  
+  @mixin underline-titles-right(){
+    
+      text-align: right;
+      &:after{
+          right:0;    
+      }
+    
+  } 
+ 
+
+  @mixin  inline-labels() {
+    .input-wrap{
+        position: relative;
+        padding-top: 0.15rem;
+        padding-bottom: 0.15rem;
+        label{
+            padding:0.1rem 0.75rem 0;
+            position: absolute;
+            z-index: 2;
+            right: 0;
+        }
+        input[type=text],
+        input[type=search],
+        input[type=url],
+        input[type=tel],
+        input[type=number],
+        input[type=range],
+        input[type=date],
+        input[type=month],
+        input[type=week],
+        input[type=time],
+        input[type=datetime],
+        input[type=datetime-local],
+        input[type=color],
+        input[type=email],
+        input[type=file],
+        select{
+            height: calc(3rem + 2px);
+            padding-top:1.45rem;
+            padding-bottom:.1rem;
+            text-align: right;
+            color:$black;
+        }
+
+        input[type=file]{
+          height: calc(4rem + 2px);
+        }
+
+        textarea {
+            padding-top:1.45rem;
+            padding-bottom:.1rem;
+        }
+    }
+    
+  }
+
+  @mixin page-form(){
+    .wpcf7{
+      direction: rtl;
+      padding:1rem 1rem 0;
+
+      legend h3{
+          font-size:1.25rem;
+          text-align: center;
+          letter-spacing: 2px;
+
+      }
+
+      label{
+          font-size:1rem;
+          border-bottom: 1px solid $text-color;
+          margin: 0.5rem auto;
+          width:100%
+      }
+
+      input[type=email],
+      input[type=tel],
+      input[type=text]{
+        
+          display: inline;
+          text-align: right;
+          background: transparent;
+          padding-bottom: 0;
+          border: none;
+          &:focus{
+              background: rgba($white,0.5);
+          }
+
+      }
+
+      input[type=email]{
+          width:11rem;
+      }
+
+      input[type=tel],
+      input[type=text]{
+          width:15rem;    
+      }
+
+      input[type=submit]{
+          margin-top:1.5rem; 
+         // background: $text-color;//differ the fotter
+          
+         // color:$white; //differ the fotter
+          border-radius: 4px;
+         // border: 2px solid $cold-grey;//differ the fotter
+
+          &:focus, &:hover{
+              color:$white;
+              background: $primary;
+              border-color:  $primary;
+
+          }  
+      }
+      
+  }
+  
+  
+  
+  }

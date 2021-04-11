@@ -23,11 +23,22 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			<div class="col-md-12">
 
-				<footer class="site-footer" id="colophon">
+				<footer class="site-footer clearfix" id="colophon">
 
+					<div class="site-footer-acc-link-wrap">
+								<a class="site-footer-acc-link" href="<?php echo home_url(); ?>/accessibility" ><?php esc_html_e( 'הצהרת נגישות',
+					'drronen' ); ?></a>
+					</div>
 					<div class="site-info">
+					
+						<span class="link-wrap">
+							<?php echo 	esc_html__( 'בניית האתר', 'drronen' ); ?>:
+							<a href="<?php  echo esc_url( __( 'http://kull-air.com','drronen' ) ); ?>">
+								<?php echo 	esc_html__( 'Kull-Air Studio', 'drronen' ); ?></span>
+							</a>
+							
 
-						<?php understrap_site_info(); ?>
+					</div><!-- .site-info -->
 
 					</div><!-- .site-info -->
 

@@ -1,0 +1,45 @@
+
+
+/***********************************
+    Navigation
+***********************************/
+
+#wrapper-navbar{
+   @include  main-menu-wide-screen();
+}
+
+
+
+
+/***********************************
+    Footer
+***********************************/
+
+#wrapper-footer-full{
+ 
+   
+
+    .widget-wrap{
+      
+        .text-wrap{
+          
+            float:right;
+            width:40%;
+            text-align: right;
+            padding-right: 1rem;
+        }
+        .map-wrap{
+             
+            float: left;
+            width: 60%;
+            iframe{
+                width:100%;
+            }
+        }
+
+
+        .text-wrap{
+            padding-bottom: 15px;
+        }
+    }
+}
