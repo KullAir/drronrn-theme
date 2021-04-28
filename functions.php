@@ -37,3 +37,51 @@ foreach ( $understrap_includes as $file ) {
 	}
 	require_once $filepath;
 }
+
+
+
+
+/**
+ *  Disable ACF on Frontend
+ * 	https://www.billerickson.net/code/disable-acf-frontend/
+ * 	Description: Provides a performance boost if ACF frontend functions aren't being used
+ *
+ * Author:      Bill Erickson
+ * Author URI:  http://www.billerickson.net
+ * License:     MIT
+ * License URI: http://www.opensource.org/licenses/mit-license.php
+ */
+ 
+/**
+ * Disable ACF on Frontend
+ *
+ */
+function ea_disable_acf_on_frontend( $plugins ) {
+
+	if( is_admin() )
+		return $plugins;
+
+	foreach( $plugins as $i => $plugin )
+		if( 'advanced-custom-fields-pro/acf.php' == $plugin )
+			unset( $plugins[$i] );
+	return $plugins;
+}
+add_filter( 'option_active_plugins', 'ea_disable_acf_on_frontend' );
+
+/************************* */
+
+function short_segment($segment, $length = 240){
+	
+	if (empty($segment)){
+		return '';
+	}
+
+	$short =strip_tags($segment);
+	
+	if(strlen($short)>$length)
+		$short = substr($segment , 0, strpos($segment," ",$length ));
+
+	return $short;
+
+
+}

@@ -1,0 +1,41 @@
+
+
+
+
+/***********************************
+    Pages and Aricive
+***********************************/
+
+
+.page-template-homepage{
+    .extra-content{
+       
+        .section-content-wrap{
+        
+           
+            @include vertical-align(absolute);
+        }
+        
+    }
+
+    #routine{
+        .section-image-col{
+                
+            .img-wrap{
+                img{
+                
+                    position: relative;
+                    left:0;
+                }
+            }
+        }
+    }
+
+    #about-me{
+        .container-fluid{
+            max-width: 1140px;
+        }
+    }
+}
+
+  

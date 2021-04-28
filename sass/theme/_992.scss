@@ -1,0 +1,65 @@
+
+
+/***********************************
+    Pages and Aricive
+***********************************/
+
+
+.page-template-homepage{
+
+    .home-page-header{
+        max-height: 680px; 
+        overflow: hidden;
+
+
+
+        .slogen-container{
+          
+             
+            &:before{
+                content: '';
+                display:block;
+              
+                background-image: url("../img/hebo-bg-wide.png");
+                background-position: left top;
+                background-size: cover;
+                width:110%;
+                height: 100%;
+                position: absolute;
+                top:0;
+                right:0;    
+
+            }
+            .home-title-wrap{
+              
+                position: absolute;
+                top:20%;
+                padding-right: 15px;  
+                
+               
+                max-width: 450px;
+                left:15px;
+                h1{
+                    
+                    text-align: right;
+                    font-size: 4rem;
+                    
+                }
+                .sub-title{
+                    
+                    text-align: right;
+                    font-size: 3rem;
+                  
+                }
+            }
+        }
+
+    }
+
+    #about-me{
+        .container-fluid{
+            max-width: 960px;
+        }
+    }
+
+}

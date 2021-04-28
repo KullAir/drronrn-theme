@@ -8,7 +8,102 @@
    @include  main-menu-wide-screen();
 }
 
+/***********************************
+    Pages and Aricive
+***********************************/
 
+
+.page-template-homepage{
+    .extra-content{
+       
+        .section-content-wrap{
+        
+            max-width:520px;
+        }
+        
+    }
+
+    #routine{
+      
+        .row{
+          
+            .section-content-wrap{
+               // @include vertical-align(absolute);
+            }
+
+        }
+
+        .section-content-col{
+          
+          
+            &:before{
+                content:'';
+                display: block;
+                width:100px;
+                height: 100%;
+                background-color: $bg-grey;
+                border-radius: 0 50% 50% 0;
+                position: absolute;
+                right:-50px;
+                top:0;
+                z-index:2;
+                
+            }
+        }
+
+        .section-image-col{
+           
+            .img-wrap{
+               img{
+                   min-width:550px;
+                   position: absolute;
+                   left:0;
+               }
+            }
+        }
+    }
+
+    #about-me{
+       
+        .section-content-col{ 
+           
+            .section-content-wrap{
+                @include vertical-align(absolute);
+                border-bottom: 2px solid $secondary;
+              
+              
+            }
+        }
+
+        .section-image-col{
+            padding-top:2rem;
+            .img-wrap{
+              
+               padding-bottom:2rem;
+               border-bottom: none;
+            }
+        }
+    }
+
+    #testimonials-sections{
+        position: relative;
+        
+        .container{
+            position: relative;
+        }
+
+        .front_holder{
+            height: 250px;
+            .front_holder_inner{ 
+                max-width: 600px;
+            }
+        }
+
+       
+    }
+
+    
+}
 
 
 /***********************************
